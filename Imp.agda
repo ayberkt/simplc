@@ -20,7 +20,7 @@ data Stmt (∣V∣ : ℕ) : Set where
 State = Vec ℕ
 
 data eval {∣V∣ : ℕ} (σ : State ∣V∣) : Expr ∣V∣ → ℕ → Set where
-  E-ref : ∀ i → eval σ (ref i) (lookup i σ)
+  E-ref : ∀ i → eval σ (ref i) (lookup σ i)
   E-lit : ∀ n → eval σ (lit n) n
   E-add : ∀ {e e′ : Expr ∣V∣} {n n′ : ℕ}
         → eval σ e  n
