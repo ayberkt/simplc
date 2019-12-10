@@ -47,8 +47,8 @@ low-proj₁ {l₀} {high} ()
 lemma1 : ∀ {∣V∣ : ℕ} {dom : level-assignment ∣V∣} {σ σ′ : State ∣V∣}
        → σ ≈ₗ[ dom ] σ′
        → (i : Fin ∣V∣)
-       → lookup i dom ⊑ low
-       → lookup i σ ≡ lookup i σ′
+       → lookup dom i ⊑ low
+       → lookup σ i ≡ lookup σ′ i
 lemma1 {σ = []} {[]} _                 _       _  = refl
 lemma1 {_}      {_}  (≈ₗ-cons-L _ _)   zero    _  = refl
 lemma1 {_}      {_}  (≈ₗ-cons-L _ p)   (suc i) q  = lemma1 p i q
@@ -57,7 +57,7 @@ lemma1 {_}      {_}  (≈ₗ-cons-H _ _ _) zero    ()
 
 -- Updating a high-level reference does not cause any low-observable change.
 lemma2 : ∀ {∣V∣ : ℕ} (dom : level-assignment ∣V∣) (σ : State ∣V∣) (i : Fin ∣V∣)
-       → high ⊑ lookup i dom
+       → high ⊑ lookup dom i
        → (val : ℕ)
        → σ ≈ₗ[ dom ] (σ [ i ]≔ val)
 --lemma2 [] [] () dom-i val
