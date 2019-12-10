@@ -1,0 +1,6 @@
+image: ayberkt/agda:v3
+
+test:
+  script:
+    - agda --version
+    - agda Compiler.agda
