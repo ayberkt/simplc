@@ -6,7 +6,7 @@ open import Data.Vec using (Vec; lookup)
 open import Data.Fin using (Fin)
 
 _[_] : ∀ {ℓ} {A : Set ℓ} {n} → Vec A n → Fin n → A
-dom [ i ] = lookup i dom
+dom [ i ] = lookup dom i
 
 open import Defs
 open import Imp
