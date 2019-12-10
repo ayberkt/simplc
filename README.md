@@ -1,4 +1,4 @@
-# `simplc` ![build status][1]
+# `simplc` ![build status](https://gitlab.com/ayberkt/simplc/badges/master/pipeline.svg)
 
 `simpl` is a tiny security-typed imperative programming language close to the
 one from Sabelfeld and Myers (2003) defined in `Imp.agda`. `simplc` is a
