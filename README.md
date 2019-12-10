@@ -26,5 +26,3 @@ Technology.
 
 We are grateful to _Marco Vassena_ and _Andrei Sabelfeld_ for suggestions and
 guidance.
-
-[1]: https://gitlab.com/ayberkt/simplc/badges/master/pipeline.svg
