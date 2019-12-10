@@ -87,7 +87,7 @@ data [_,_]↝_ {∣V∣ : ℕ} : Config ∣V∣
   R-load : ∀ {ind : Fin ∣V∣}
              {P : MachineProgram ∣V∣} {pc} {S}  {M : Vec ℕ ∣V∣}
          → P [ pc ]≈ LOAD ind
-         → [ ⟨ pc , S , M ⟩ , P ]↝ ⟨ suc pc , lookup ind M ∷ S , M ⟩
+         → [ ⟨ pc , S , M ⟩ , P ]↝ ⟨ suc pc , lookup M ind ∷ S , M ⟩
   R-str : ∀ {v : ℕ} {ind : Fin ∣V∣}
             {P : MachineProgram ∣V∣} {pc S} {M : Vec ℕ ∣V∣}
         → P [ pc ]≈ STR ind
